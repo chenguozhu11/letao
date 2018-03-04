@@ -1,3 +1,117 @@
-.mb{
-margin-bottom: 20px;
+.mb {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+.aside {
+    width: 180px;
+    height: 100%;
+    background-color: #222d32;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.branch h4 {
+    margin: 0;
+}
+
+.aside .branch a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #367fa9;
+    color: #fff;
+    font-size: 24px
+}
+
+.aside .user {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.aside .user img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%
+}
+
+.aside .user p {
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px
+}
+
+.aside .nav {
+    line-height: 40px;
+    width: 100%;
+}
+
+.aside .nav ul {
+    padding: 0;
+}
+
+.aside .nav a {
+    color: #ccc;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 3px solid transparent;
+    text-align: center
+}
+
+.aside .nav a.now {
+    border-color: #069;
+    background-color: #1d1f21;
+    color: #fff;
+}
+
+.classes a {
+    padding-left: 15px;
+}
+
+.main {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 180px;
+    box-sizing: border-box
+}
+
+.topbar {
+    width: 100%;
+    position: fixed;
+    margin-left: 180px;
+    height: 50px;
+    line-height: 50px;
+    top: 0;
+    left: 0;
+    background-color: #3c8dbc;
+}
+
+.topbar a {
+    font-size: 24px;
+    height: 50px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.topbar .icon_back {
+    margin-right: 200px;
+}
+
+.content {
+    margin-top: 50px;
+    padding:20px 10px;
+    height: 2000px;
 }
