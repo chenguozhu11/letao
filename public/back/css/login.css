@@ -2,8 +2,9 @@ body {
     background-color: #222d32;
 }
 
-.container>div {
+.lt_container>div {
     margin-top: 250px;
+    width: 400px;
     background-color: #fff;
     border-radius: 10px;
     padding: 0;

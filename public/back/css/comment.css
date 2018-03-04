@@ -20,6 +20,12 @@ a:active {
     position: fixed;
     top: 0;
     left: 0;
+    transition: all 1s;
+    z-index: 100;
+}
+
+.aside.now {
+    left: -180px;
 }
 
 .branch h4 {
@@ -85,18 +91,28 @@ a:active {
     width: 100%;
     background-color: #fff;
     padding-left: 180px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+.main.now {
+    padding: 0;
 }
 
 .topbar {
-    width: 100%;
     position: fixed;
-    margin-left: 180px;
+    width: 100%;
+    padding-left: 180px;
     height: 50px;
     line-height: 50px;
     top: 0;
     left: 0;
     background-color: #3c8dbc;
+    transition: all 1s;
+}
+
+.topbar.now {
+    padding: 0;
 }
 
 .topbar a {
@@ -107,11 +123,28 @@ a:active {
 }
 
 .topbar .icon_back {
-    margin-right: 200px;
+    margin-right: 20px;
 }
 
 .content {
     margin-top: 50px;
-    padding:20px 10px;
-    height: 2000px;
+    padding: 20px 10px;
+}
+
+.pic_left,
+.pic_right {
+    width: 45%;
+    height: 400px;
+}
+
+.pic_left>div,
+.pic_right>div {
+    margin: 0 auto;
+}
+
+.table.table-bordered th,
+.table.table-bordered td{
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
 }
