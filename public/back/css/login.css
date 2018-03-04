@@ -1,0 +1,30 @@
+body {
+    background-color: #222d32;
+}
+
+.container>div {
+    margin-top: 150px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.title h4 {
+    display: block;
+    background-color: #337ab7;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    color: #fff
+}
+
+.mb {
+    margin-bottom: 20px;
+}
+
+.form-horizontal div.form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
