@@ -79,17 +79,26 @@
                         <script type="text/tempalate" id="tmp">
                             {{ each rows v i }}
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ (page-1)*size+i+1 }}</td>
+                                <td>{{ v.username }}</td>
+                                <td>{{ v.mobile }}</td>
+                                <td>{{ v.isDelete?"正常":"禁用"}}</td>
+                                <td data-isD={{v.isDelete}} data-id={{v.id}}>{{ if v.isDelete }}
+                                     <a href="javascript:;" class="btn btn-danger">禁用</a>
+                                    {{ else}}
+                                     <a href="javascript:;" class="btn btn-default">启用</a>
+                                    {{ /if }}
+                                </td>
                             </tr>
                             {{ /each }}
                         </script>
                     </tbody>
                 </table>
             </div>
+            <div style="text-align:right;">
+                <ul id="pagintor"></ul>
+            </div>
+            
         </div>
 
         <!-- 模态框 -->
@@ -119,6 +128,7 @@
 </body>
 <script src="../lib/jquery/jquery.min.js"></script>
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="../lib/artTemplate/template-web.js"></script>
 <script src="../js/comment.js"></script>
 <script src="../js/user.js"></script>
