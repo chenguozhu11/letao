@@ -25,7 +25,7 @@
             <div class="nav">
                 <ul>
                     <li>
-                        <a href="javascript:;" class="now">
+                        <a href="user.html">
                             <span class="glyphicon glyphicon-user"></span>
                             用户管理
                         </a>
@@ -34,9 +34,9 @@
                         <a href="javascript:;" class="unfold">
                             <span class="glyphicon glyphicon-th-list"></span>
                             分类管理</a>
-                        <div class="classes" style="display:none;">
+                        <div class="classes">
                             <a href="first.html">一级分类</a>
-                            <a href="second.html">二级分类</a>
+                            <a href="javascript:;" class="now">二级分类</a>
                         </div>
                     </li>
                     <li>
@@ -61,18 +61,18 @@
                     <li>
                         <a href="#">管理系统</a>
                     </li>
-                    <li class="active">用户管理</li>
+                    <li class="active">首页</li>
                 </ol>
             </div>
+            <div class="categoryAdd btn btn-default" style="margin-left:10px;">添加二级分类</div>
             <div style="padding:10px;">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th width="10%">序号</th>
-                            <th width="30%">用户名</th>
-                            <th width="30%">手机号</th>
-                            <th width="20%">状态</th>
-                            <th width="10%">操作</th>
+                            <th width="30%">一级分类名称</th>
+                            <th width="30%">二级分类名称</th>
+                            <th width="30%">二级分类LOGO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,15 +80,10 @@
                             {{ each rows v i }}
                             <tr>
                                 <td>{{ (page-1)*size+i+1 }}</td>
-                                <td>{{ v.username }}</td>
-                                <td>{{ v.mobile }}</td>
-                                <td>{{ v.isDelete?"正常":"禁用"}}</td>
-                                <td data-isD={{v.isDelete}} data-id={{v.id}}>{{ if v.isDelete }}
-                                     <a href="javascript:;" class="btn btn-danger">禁用</a>
-                                    {{ else}}
-                                     <a href="javascript:;" class="btn btn-default">启用</a>
-                                    {{ /if }}
-                                </td>
+                                <td>{{ v.categoryName }}</td>
+                                <td>{{ v.brandName }}</td>
+                                <td>
+                                    <img src="{{ v.brandLogo }}" alt=""> </td>
                             </tr>
                             {{ /each }}
                         </script>
@@ -98,7 +93,6 @@
             <div style="text-align:right;">
                 <ul id="pagintor"></ul>
             </div>
-            
         </div>
 
         <!-- 模态框 -->
@@ -119,41 +113,77 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary btn_logout">退出</button>
+                        <a href="JavaScript:;" class="btn btn-primary btn_logout">确定</a>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="modal fade" tabindex="-1" role="dialog" id="isDelete">
+        <div class="modal fade" tabindex="-1" role="dialog" id="categoryAdd">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
-                        <h4 class="modal-title">温馨提示</h4>
+                        <h4 class="modal-title">添加分类</h4>
                     </div>
-                    <div class="modal-body">
-                        <p class="text-danger">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                             你确定要执行此操作吗？
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary btn_yes">确定</button>
-                    </div>
+                    <form id="form">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <span class="dropdown_text">请选择一级分类</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+
+                                        <script type="text/html" id="tpl">
+                                            {{each rows v i}}
+                                            <li data-id="{{v.id}}">
+                                                <a href="javascript:;">{{v.categoryName}}</a>
+                                            </li>
+                                            {{/each}}
+                                        </script>
+
+                                    </ul>
+                                    <input type="hidden" name="categoryId">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" autocomplete="off" class="form-control" placeholder="请输入二级分类的名称" name="brandName">
+                            </div>
+                            <div class="form-group">
+                                <div class="file_box">
+                                    <label for="fileupload" class="btn btn-default">上传图片</label>
+                                    <input type="file" style="display: none" id="fileupload" class="btn btn-default" name="pic1" data-url="/category/addSecondCategoryPic">
+                                </div>
+                            </div>
+                            <div class="form-group img_box">
+                                <img src="../images/none.png" width="100" height="100" alt="">
+                                <input type="hidden" name="brandLogo">
+                                <input type="hidden" name="hot" value="1">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn_back" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary btn_add">添加</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </body>
 <script src="../lib/jquery/jquery.min.js"></script>
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="../lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="../lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="../lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="../lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="../lib/artTemplate/template-web.js"></script>
 <script src="../js/comment.js"></script>
-<script src="../js/user.js"></script>
+<script src="../js/second.js"></script>
+
 </html>

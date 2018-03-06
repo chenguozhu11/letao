@@ -38,16 +38,16 @@ $(function () {
         var isDelete=$(this).parent().data("isD");
         var id=$(this).parent().data("id");
 
-        $("button.btn_yes").off().on("click",function(){
-            $.ajax({
-                type: "post",
-                url: "",
-                data: { "id": id, "isDelete": isDelete },
-                success: function (info) {
-                    console.log(info)
-                }
-            })
-        })
+        // $("button.btn_yes").off().on("click",function(){
+        //     $.ajax({
+        //         type: "post",
+        //         url: "",
+        //         data: { "id": id, "isDelete": isDelete },
+        //         success: function (info) {
+        //             console.log(info)
+        //         }
+        //     })
+        // })
     })
 })
 
