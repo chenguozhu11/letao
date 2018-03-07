@@ -1,0 +1,52 @@
+.lt_main {
+    width: 100%;
+    height: 100%;
+}
+
+.lt_main>div {
+    position: relative;
+    height: 100%;
+}
+
+.nav_left {
+    width: 90px;
+    float: left;
+}
+
+.nav_left ul a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+    font-size: 16px;
+    background-color: pink;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+}
+
+.nav_left ul a.now {
+    border-right: none;
+    background-color: #fff;
+}
+
+.content_right {
+    overflow: hidden;
+}
+
+.content_right ul li {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+
+.content_right ul li img{
+    width: 62px;
+    height: 62px;
+    margin: 0 auto;
+}
+ .content_right ul p {
+    line-height: 50px;
+    padding-left: 10px;
+}
