@@ -1,0 +1,35 @@
+.lt_history {
+    padding: 10px;
+}
+
+.lt_history p{
+    padding: 10px;
+    color: #666;
+}
+.lt_history ul {
+    border: 1px dashed red;
+}
+
+.lt_history li {
+    padding-left: 10px;
+    font-size: 12px;
+    border-bottom: 1px dashed red;
+    height: 30px;
+    line-height: 30px;
+}
+
+.lt_history li:last-child {
+    border: none;
+}
+
+.search_title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #666;
+}
+
+.search_title .btn_empty {
+    height: 30px;
+    line-height: 30px;
+}
