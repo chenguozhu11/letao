@@ -1,0 +1,42 @@
+.lt_sereen {
+    background-color: #eee;
+}
+
+.lt_sereen li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.lt_sereen li a {
+    font-size: 12px;
+    color: #666;
+}
+
+.lt_sereen li a span {
+    margin-left: 2px;
+}
+.lt_sereen li.now a,
+.lt_sereen li.now span{
+    color: darkorange;
+}
+.lt_box {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #069;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: play 2s infinite ease-in-out;
+}
+
+@keyframes play {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}

@@ -130,3 +130,31 @@ img {
     border-radius: 0 5px 5px 0;
     height: 34px;
 }
+
+.lt_product {
+    padding: 10px;
+}
+
+.lt_product a {
+    display: block;
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.lt_product .nowPic {
+    color: red;
+    margin-right: 5px;
+}
+
+.lt_product .oldPic {
+    text-decoration: line-through;
+}
+
+.lt_product a:nth-child(odd) {
+    margin-right: 4%;
+}
